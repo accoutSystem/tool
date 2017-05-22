@@ -1,0 +1,38 @@
+﻿       DHY1995091606	DHY817478
+ZFG1974111414	ZFG071449
+NK1992080934	NK012439
+LCS1955110377	LCS288984
+SQ1999110639	SQ051510
+GH1994111210	GH268039
+
+
+TJ1990112015	TJ255208
+LP1990032515	LP924004
+WSL1980031371	WSL234998
+LLH1989100825	LLH290601
+WCM1958041560	WCM706221
+CYC1991041085	CYC850156
+DSL1987031474	DSL272828
+{
+    "succ_flag": "0",
+    "error_msg": "您的手机号码已经通过验证，不需要再获取验证短信！",
+    "statusCode": 200,
+    "statusReason": "OK",
+    "responseHeaders": {
+        "Server": "Apache-Coyote/1.1",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Transfer-Encoding": "chunked",
+        "X-Powered-By": "Servlet 2.5; JBoss-5.0/JBossWeb-2.1",
+        "Content-Language": "zh-CN",
+        "Pragma": "no-cache",
+        "Connection": "Keep-Alive",
+        "Date": "Sun, 02 Aug 2015 13:53:30 GMT",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Set-Cookie": "ZL9Z76ArpV=217-29-8180; Path=/"
+    },
+    "responseTime": 6,
+    "totalTime": 7,
+    "isSuccessful": true
+}
+
+{"succ_flag":"0","error_msg":"很抱歉，您输入的手机号码135****6921已被其他用户用于在本网站注册用户。如有疑问，请致电铁路客服12306。","statusCode":200,"statusReason":"OK","responseHeaders":{"Server":"Apache-Coyote/1.1","Expires":"Thu, 01 Jan 1970 00:00:00 GMT","Transfer-Encoding":"chunked","X-Powered-By":"Servlet 2.5; JBoss-5.0/JBossWeb-2.1","Content-Language":"zh-CN","Pragma":"no-cache","Connection":"Keep-Alive","Date":"Sun, 02 Aug 2015 14:14:24 GMT","Content-Type":"application/json;charset=UTF-8","Set-Cookie":"ZL9Z76ArpV=217-29-8180; Path=/"},"responseTime":25,"totalTime":25,"isSuccessful":true}

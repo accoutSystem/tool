@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0DF1C56E-D6AA-4417-B392-823287A3C1C7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ToolWebManager</RootNamespace>
+    <AssemblyName>ToolWebManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fangbian.Common">
+      <HintPath>..\lib\Ticket\Fangbian.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.hMailServer">
+      <HintPath>..\lib\mail\Interop.hMailServer.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\Connector NET 6.8.3\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Ticket\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\lib\NPOI\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Buy\CXSellDetail.aspx" />
+    <Content Include="Buy\CXSellLogin.aspx" />
+    <Content Include="Buy\CXSellMain.aspx" />
+    <Content Include="Buy\DownLoad.aspx" />
+    <Content Include="Free\GetUser.aspx" />
+    <Content Include="ReadEmail\CXEmailDetail.aspx" />
+    <Content Include="ReadEmail\CXEmaiList.aspx" />
+    <Content Include="ReadEmail\CXGetEmailPW.aspx" />
+    <Content Include="ReadEmail\CXLogin.aspx" />
+    <Content Include="FrameWork.aspx" />
+    <Content Include="ReadEmail\ReadRemoteEmail.aspx" />
+    <Content Include="RegisterWatch.aspx" />
+    <Content Include="AccountDetail.aspx" />
+    <Content Include="MoblieValidWatch.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebForm2.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="analog.ashx.cs">
+      <DependentUpon>analog.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\ResourceLock.cs" />
+    <Compile Include="Base\SellBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buy\CXSellDetail.aspx.cs">
+      <DependentUpon>CXSellDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buy\CXSellDetail.aspx.designer.cs">
+      <DependentUpon>CXSellDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buy\CXSellLogin.aspx.cs">
+      <DependentUpon>CXSellLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buy\CXSellLogin.aspx.designer.cs">
+      <DependentUpon>CXSellLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buy\CXSellMain.aspx.cs">
+      <DependentUpon>CXSellMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buy\CXSellMain.aspx.designer.cs">
+      <DependentUpon>CXSellMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buy\DownLoad.aspx.cs">
+      <DependentUpon>DownLoad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buy\DownLoad.aspx.designer.cs">
+      <DependentUpon>DownLoad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Free\GetUser.aspx.cs">
+      <DependentUpon>GetUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Free\GetUser.aspx.designer.cs">
+      <DependentUpon>GetUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReadEmail\CXEmailDetail.aspx.cs">
+      <DependentUpon>CXEmailDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReadEmail\CXEmailDetail.aspx.designer.cs">
+      <DependentUpon>CXEmailDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReadEmail\CXEmaiList.aspx.cs">
+      <DependentUpon>CXEmaiList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReadEmail\CXEmaiList.aspx.designer.cs">
+      <DependentUpon>CXEmaiList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReadEmail\CXGetEmailPW.aspx.cs">
+      <DependentUpon>CXGetEmailPW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReadEmail\CXGetEmailPW.aspx.designer.cs">
+      <DependentUpon>CXGetEmailPW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReadEmail\CXLogin.aspx.cs">
+      <DependentUpon>CXLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReadEmail\CXLogin.aspx.designer.cs">
+      <DependentUpon>CXLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrameWork.aspx.cs">
+      <DependentUpon>FrameWork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrameWork.aspx.designer.cs">
+      <DependentUpon>FrameWork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="getMailContent.ashx.cs">
+      <DependentUpon>getMailContent.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadEmail\ReadRemoteEmail.aspx.cs">
+      <DependentUpon>ReadRemoteEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReadEmail\ReadRemoteEmail.aspx.designer.cs">
+      <DependentUpon>ReadRemoteEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterWatch.aspx.cs">
+      <DependentUpon>RegisterWatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterWatch.aspx.designer.cs">
+      <DependentUpon>RegisterWatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AccountDetail.aspx.cs">
+      <DependentUpon>AccountDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountDetail.aspx.designer.cs">
+      <DependentUpon>AccountDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MoblieValidWatch.aspx.cs">
+      <DependentUpon>MoblieValidWatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MoblieValidWatch.aspx.designer.cs">
+      <DependentUpon>MoblieValidWatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="getMailContent.ashx" />
+    <Content Include="analog.ashx" />
+    <None Include="Properties\PublishProfiles\toolServer.pubxml" />
+    <Content Include="Site1.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\CX.Common.csproj">
+      <Project>{748db1ea-c3da-4f04-ae0e-a6b50c338f1f}</Project>
+      <Name>CX.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyDB\CX.DB.csproj">
+      <Project>{0dc7e4af-9cc5-487b-ba9e-030066926b05}</Project>
+      <Name>CX.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyEntiry\CX.Entiry.csproj">
+      <Project>{6a47a29e-be1e-4205-80ef-9f626050027b}</Project>
+      <Name>CX.Entiry</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Queue\CaptchaServerCacheClient\CX.BaseServerClient.csproj">
+      <Project>{fad24475-5758-43c4-aa0f-5d392d5e3866}</Project>
+      <Name>CX.BaseServerClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Buy\DownLoad\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9277</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/CX.WebManager</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

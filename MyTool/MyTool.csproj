@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA3E7AB6-EF42-4CE0-80AB-207A07B25FF8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyTool</RootNamespace>
+    <AssemblyName>MyTool</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>20150717042547706_easyicon_net_24.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fangbian.Common">
+      <HintPath>..\lib\Ticket\Fangbian.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.Data.Client">
+      <HintPath>..\lib\Ticket\Fangbian.Data.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.DataStruct">
+      <HintPath>..\lib\Ticket\Fangbian.DataStruct.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.Log">
+      <HintPath>..\lib\Ticket\Fangbian.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.Tickets">
+      <HintPath>..\lib\Ticket\Fangbian.Tickets.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.Tickets.Trains.Activities">
+      <HintPath>..\lib\Ticket\Fangbian.Tickets.Trains.Activities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\lib\Excel\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\lib\Ticket\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BulidUserPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BulidUserPage.designer.cs">
+      <DependentUpon>BulidUserPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClearForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClearForm.Designer.cs">
+      <DependentUpon>ClearForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CommonMethod.cs" />
+    <Compile Include="DataLinkPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataLinkPage.designer.cs">
+      <DependentUpon>DataLinkPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportResourcePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportResourcePage.Designer.cs">
+      <DependentUpon>ExportResourcePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\AddBusinessPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\AddBusinessPage.Designer.cs">
+      <DependentUpon>AddBusinessPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\AddFinancePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\AddFinancePage.Designer.cs">
+      <DependentUpon>AddFinancePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\EditFinancePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\EditFinancePage.Designer.cs">
+      <DependentUpon>EditFinancePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\FinancePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\FinancePage.Designer.cs">
+      <DependentUpon>FinancePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlowManager\AccountActivation.cs" />
+    <Compile Include="FlowManager\ToolCommon.cs" />
+    <Compile Include="LockPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LockPage.designer.cs">
+      <DependentUpon>LockPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectBusinessPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectBusinessPage.designer.cs">
+      <DependentUpon>SelectBusinessPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\ResourceDetailPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\ResourceDetailPage.Designer.cs">
+      <DependentUpon>ResourceDetailPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\ResourceStatisticsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\ResourceStatisticsPage.Designer.cs">
+      <DependentUpon>ResourceStatisticsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\TaskStatisticsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\TaskStatisticsPage.designer.cs">
+      <DependentUpon>TaskStatisticsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolMain.Designer.cs">
+      <DependentUpon>ToolMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Valid\LoginValidPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\LoginValidPage.Designer.cs">
+      <DependentUpon>LoginValidPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\PasscodeUpdatePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\PasscodeUpdatePage.Designer.cs">
+      <DependentUpon>PasscodeUpdatePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\VailMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\VailMainPage.Designer.cs">
+      <DependentUpon>VailMainPage.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BulidUserPage.resx">
+      <DependentUpon>BulidUserPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClearForm.resx">
+      <DependentUpon>ClearForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataLinkPage.resx">
+      <DependentUpon>DataLinkPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportResourcePage.resx">
+      <DependentUpon>ExportResourcePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\AddBusinessPage.resx">
+      <DependentUpon>AddBusinessPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\AddFinancePage.resx">
+      <DependentUpon>AddFinancePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\EditFinancePage.resx">
+      <DependentUpon>EditFinancePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\FinancePage.resx">
+      <DependentUpon>FinancePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LockPage.resx">
+      <DependentUpon>LockPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectBusinessPage.resx">
+      <DependentUpon>SelectBusinessPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\ResourceDetailPage.resx">
+      <DependentUpon>ResourceDetailPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\ResourceStatisticsPage.resx">
+      <DependentUpon>ResourceStatisticsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\TaskStatisticsPage.resx">
+      <DependentUpon>TaskStatisticsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolMain.resx">
+      <DependentUpon>ToolMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Valid\LoginValidPage.resx">
+      <DependentUpon>LoginValidPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\PasscodeUpdatePage.resx">
+      <DependentUpon>PasscodeUpdatePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\VailMainPage.resx">
+      <DependentUpon>VailMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyDB\MyDB.csproj">
+      <Project>{0dc7e4af-9cc5-487b-ba9e-030066926b05}</Project>
+      <Name>MyDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyEntiry\MyEntiry.csproj">
+      <Project>{6a47a29e-be1e-4205-80ef-9f626050027b}</Project>
+      <Name>MyEntiry</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="20150717042547706_easyicon_net_24.ico" />
+    <Content Include="Resources\Add.png" />
+    <Content Include="Resources\all.png" />
+    <Content Include="Resources\amount.png" />
+    <Content Include="Resources\bigLock.png" />
+    <Content Include="Resources\bulid.png" />
+    <Content Include="Resources\business.png" />
+    <Content Include="Resources\buy1.png" />
+    <Content Include="Resources\edit.png" />
+    <Content Include="Resources\lock.png" />
+    <Content Include="Resources\novalid.png" />
+    <Content Include="Resources\user1.png" />
+    <None Include="Resources\data.png" />
+    <None Include="Resources\export%281%29.png" />
+    <None Include="Resources\valid.png" />
+    <None Include="Resources\export.png" />
+    <None Include="Resources\user%281%29.png" />
+    <None Include="Resources\import%281%29.png" />
+    <None Include="Resources\buy%281%29.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\import.png" />
+    <None Include="Resources\buy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flow\修改密码.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Flow\查询已完成订单.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Flow\查询未完成的订单.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Flow\用户登录初始化.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

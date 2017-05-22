@@ -1,0 +1,154 @@
+private void NpoiExcel(List<t_offline_order_Model> hisModels, string title)
+        {
+            HSSFWorkbook book = new HSSFWorkbook();
+            ISheet sheet = book.CreateSheet(title);
+            int rowIndex = 0;
+            IRow headerrow = sheet.CreateRow(rowIndex);
+            headerrow.Height = 22 * 20;
+            rowIndex++;
+            ICellStyle style = book.CreateCellStyle();
+            style.Alignment = HorizontalAlignment.Center;
+            style.VerticalAlignment = VerticalAlignment.Center;
+
+            List<string> headers = new List<string>() { "订单号", "出票时间", "订单张数", "订单总金额", "单张票价", "明细", "出发站", "终点站", "车次" };
+            
+            int i = 0;
+            //表头
+            foreach (var v in headers)
+            {
+                ICell cell = headerrow.CreateCell(i);
+                cell.CellStyle = style;
+                cell.SetCellValue(v);
+                i++;
+            }
+            ICellStyle contentStyleCenter = book.CreateCellStyle();
+            contentStyleCenter.Alignment = HorizontalAlignment.Center;
+            contentStyleCenter.VerticalAlignment = VerticalAlignment.Center;
+            contentStyleCenter.WrapText = true;
+
+            ICellStyle contentStyleLeft = book.CreateCellStyle();
+            contentStyleLeft.Alignment = HorizontalAlignment.Left;
+            contentStyleLeft.VerticalAlignment = VerticalAlignment.Center;
+            contentStyleLeft.WrapText = true;
+
+            ICellStyle contentStyleRight = book.CreateCellStyle();
+            contentStyleRight.Alignment = HorizontalAlignment.Right;
+            contentStyleRight.VerticalAlignment = VerticalAlignment.Center;
+            contentStyleRight.WrapText = true;
+
+            //内容填充
+            foreach (var v in hisModels)
+            {
+                i = 0;
+
+                IRow contentRow = sheet.CreateRow(rowIndex);
+                contentRow.Height = 22 * 20;
+                rowIndex++;
+                //"订单号",  
+                ICell cell = contentRow.CreateCell(i);
+                cell.CellStyle = contentStyleLeft;
+                cell.SetCellValue(v.Merchant_order_id);
+                i++;
+                //"出票时间", 
+                cell = contentRow.CreateCell(i);
+                cell.CellStyle = contentStyleCenter;
+                cell.SetCellValue(v.End_time.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+                i++;
+                //  "订单张数", 
+                cell = contentRow.CreateCell(i);
+                cell.CellStyle = contentStyleRight;
+                cell.SetCellValue(v.TicketsCnt);
+                i++;
+                //"订单总金额" 
+                cell = contentRow.CreateCell(i);
+                cell.CellStyle = contentStyleRight;
+                cell.SetCellValue(v.OrderMount);
+                i++;
+                //"订单总金额" 
+                cell = contentRow.CreateCell(i);
+                cell.CellStyle = contentStyleRight;
+                cell.SetCellValue(v.TicketPrice);
+                i++;
+                //"明细" 
+                string tmp = string.Empty;
+                int num = 1;
+                foreach (var tic in v.Tickets)
+                {
+                    tmp += ("  (" + num + ")" + tic.passengerName + "  " + tic.ticketTypeName + " " + tic.price);
+                    num++;
+                }
+                cell = contentRow.CreateCell(i);
+                cell.CellStyle = contentStyleLeft;
+                cell.SetCellValue(tmp);
+                i++;
+                //"出发站" 
+                cell = contentRow.CreateCell(i);
+                cell.CellStyle = contentStyleLeft;
+                cell.SetCellValue(v.DptStation);
+                i++;
+                //"终点站" 
+                cell = contentRow.CreateCell(i);
+                cell.CellStyle = contentStyleLeft;
+                cell.SetCellValue(v.ArrStation);
+                i++;
+                // "车次"
+                cell = contentRow.CreateCell(i);
+                cell.CellStyle = contentStyleLeft;
+                cell.SetCellValue(v.TrainNo);
+                i++;
+            }
+
+            int colCnt = headers.Count;
+            //列宽自适应，只对英文和数字有效
+            for (i = 0; i < colCnt; i++)
+            {
+                sheet.AutoSizeColumn(i);
+            }
+            //获取当前列的宽度，然后对比本列的长度，取最大值
+            for (int columnNum = 0; columnNum < colCnt; columnNum++)
+            {
+                int columnWidth = sheet.GetColumnWidth(columnNum) / 256;
+                for (int rowNum = 1; rowNum <= sheet.LastRowNum; rowNum++)
+                {
+                    IRow currentRow;
+                    //当前行未被使用过
+                    if (sheet.GetRow(rowNum) == null)
+                    {
+                        currentRow = sheet.CreateRow(rowNum);
+                    }
+                    else
+                    {
+                        currentRow = sheet.GetRow(rowNum);
+                    }
+
+                    if (currentRow.GetCell(columnNum) != null)
+                    {
+                        ICell currentCell = currentRow.GetCell(columnNum);
+                        int length = Encoding.Default.GetBytes(currentCell.ToString()).Length;
+                        if (columnWidth < length)
+                        {
+                            columnWidth = length;
+                        }
+                    }
+                }
+                sheet.SetColumnWidth(columnNum, columnWidth * 256);
+            }
+
+            try
+            {  
+                MemoryStream ms = new MemoryStream();
+                book.Write(ms); 
+                Response.AddHeader("Content-Disposition", string.Format("attachment; filename={0}.xls", HttpUtility.UrlEncode(title + "_" + DateTime.Now.ToString("yyyy-MM-dd"), System.Text.Encoding.UTF8)));
+                Response.BinaryWrite(ms.ToArray());
+                Response.Flush();
+                Response.End();
+                book = null;
+                ms.Close();
+                ms.Dispose();
+                 
+            }
+            catch (Exception ex)
+            {
+                logger.Info("导出文件异常：" + ex.Message);
+            }
+        }

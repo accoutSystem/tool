@@ -1,0 +1,47 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="Fangbian.ActivitiesDesigner.Root"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:ftt="clr-namespace:Fangbian.Tickets.Trains;assembly=Fangbian.Tickets"
+ xmlns:fttai="clr-namespace:Fangbian.Tickets.Trains.Activities.Initialize;assembly=Fangbian.Tickets.Trains.Activities"
+ xmlns:fttal="clr-namespace:Fangbian.Tickets.Trains.Activities.Login;assembly=Fangbian.Tickets.Trains.Activities"
+ xmlns:fttap="clr-namespace:Fangbian.Tickets.Trains.Activities.PC;assembly=Fangbian.Tickets.Trains.Activities"
+ xmlns:fttapl="clr-namespace:Fangbian.Tickets.Trains.Activities.PC.Login;assembly=Fangbian.Tickets.Trains.Activities"
+ xmlns:fttapo="clr-namespace:Fangbian.Tickets.Trains.Activities.PC.Order;assembly=Fangbian.Tickets.Trains.Activities"
+ xmlns:fttdrl="clr-namespace:Fangbian.Tickets.Trains.DataTransferObject.Response.Login;assembly=Fangbian.Tickets"
+ xmlns:fttdrp="clr-namespace:Fangbian.Tickets.Trains.DataTransferObject.Response.PC;assembly=Fangbian.Tickets"
+ xmlns:fttdrp1="clr-namespace:Fangbian.Tickets.Trains.DataTransferObject.Request.PC;assembly=Fangbian.Tickets"
+ xmlns:fttw="clr-namespace:Fangbian.Tickets.Trains.WFDataItem;assembly=Fangbian.Tickets"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Xml"
+ xmlns:s3="clr-namespace:System;assembly=System.Core"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System"
+ xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel"
+ xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core"
+ xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:sl="clr-namespace:System.Linq;assembly=System.Core"
+ xmlns:st="clr-namespace:System.Text;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="requestSession" Type="InOutArgument(ftt:RequestSession)" />
+    <x:Property Name="activityResult" Type="InOutArgument(fttw:ActivityExcuteResult)" />
+    <x:Property Name="order" Type="OutArgument(fttdrp:PCNoCompleteOrderResponse)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>262,226</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence DisplayName="12306未完成订单" sad:XamlDebuggerXmlReader.FileName="D:\火车票\Workstation\火车票系统工具库\Fangbian.ActivitiesTester\Test\PC查询未完成订单.XAML" sap:VirtualizedContainerService.HintSize="222,146">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg3:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <fttapo:PCQueryNoCompleteActivity RequestEncrytionParam="{x:Null}" ResponseDecipheringParam="{x:Null}" ResultMessage="{x:Null}" DisplayName="12306未完成订单" ExcuteResult="[activityResult]" sap:VirtualizedContainerService.HintSize="200,22" NoCompleteOrders="[order]" RequestSession="[requestSession]" WebInterfaceUri="http://localhost:28000" />
+  </Sequence>
+</Activity>

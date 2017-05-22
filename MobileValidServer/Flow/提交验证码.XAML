@@ -1,0 +1,88 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Fangbian.ActivitiesDesigner.Root"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:ftt="clr-namespace:Fangbian.Tickets.Trains;assembly=Fangbian.Tickets"
+ xmlns:fttap="clr-namespace:Fangbian.Tickets.Trains.Activities.Phone;assembly=Fangbian.Tickets.Trains.Activities"
+ xmlns:fttw="clr-namespace:Fangbian.Tickets.Trains.WFDataItem;assembly=Fangbian.Tickets"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="requestSession" Type="InOutArgument(ftt:RequestSession)" />
+    <x:Property Name="activityResult" Type="InOutArgument(fttw:ActivityExcuteResult)" />
+    <x:Property Name="validcode" Type="InArgument(x:String)" />
+    <x:Property Name="phone" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Fangbian.ActivitiesDesigner.Root_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>Fangbian.Tickets.Trains</x:String>
+      <x:String>Fangbian.Tickets.Trains.Activities.Initialize</x:String>
+      <x:String>Fangbian.Tickets.Trains.Activities.Login</x:String>
+      <x:String>Fangbian.Tickets.Trains.Activities.Order.Query</x:String>
+      <x:String>Fangbian.Tickets.Trains.DB</x:String>
+      <x:String>Fangbian.Tickets.Trains.DataTransferObject</x:String>
+      <x:String>Fangbian.Tickets.Trains.DataTransferObject.Response</x:String>
+      <x:String>Fangbian.Tickets.Trains.DataTransferObject.Response.Order</x:String>
+      <x:String>Fangbian.Tickets.Trains.DataTransferObject.Request.Pay</x:String>
+      <x:String>Fangbian.Tickets.Trains.DataTransferObject.Response.Pay</x:String>
+      <x:String>Fangbian.Tickets.Trains.WFDataItem</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities.Debugger</x:String>
+      <x:String>System.Activities.Debugger.Symbol</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Fangbian.Tickets</AssemblyReference>
+      <AssemblyReference>Fangbian.Tickets.Trains.Activities</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="提交验证码" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <fttap:SumbitCheckMobileCodeActivity RequestEncrytionParam="{x:Null}" ResponseDecipheringParam="{x:Null}" ResultMessage="{x:Null}" DisplayName="提交验证码" ExcuteResult="[activityResult]" sap2010:WorkflowViewState.IdRef="SumbitCheckMobileCodeActivity_1" Phone="[phone]" RequestSession="[requestSession]" ValidCode="[validcode]" WebInterfaceUri="http://localhost:28000" />
+    <sads:DebugSymbol.Symbol>d15FOlzmnY7otoVcVG9v5bel5YW36ZuG5ZCIXFdpbmRvd3NGb3Jtc0FwcGxpY2F0aW9uMVxNb2JpbGVWYWxpZFNlcnZlclxGbG93XOaPkOS6pOmqjOivgeeggS5YQU1MB0cDSg4CAQFIBUjzAgIBAkipAUi7AQIBCkidAkivAgIBCEjYAkjwAgIBB0i6AkjHAgIBBUiEAkiNAgIBAw==</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="SumbitCheckMobileCodeActivity_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="222,146">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Fangbian.ActivitiesDesigner.Root_1" sap:VirtualizedContainerService.HintSize="262,226" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA3E7AB6-EF42-4CE0-80AB-207A07B25FF8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyTool</RootNamespace>
+    <AssemblyName>MyTool</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>20150717042547706_easyicon_net_24.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fangbian.Common">
+      <HintPath>..\lib\Ticket\Fangbian.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.Data.Client">
+      <HintPath>..\lib\Ticket\Fangbian.Data.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.DataStruct">
+      <HintPath>..\lib\Ticket\Fangbian.DataStruct.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Ticket\Fangbian.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.Tickets">
+      <HintPath>..\lib\Ticket\Fangbian.Tickets.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.Tickets.Trains.Activities">
+      <HintPath>..\lib\Ticket\Fangbian.Tickets.Trains.Activities.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\lib\Ticket\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\lib\NPOI\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BulidUserPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BulidUserPage.designer.cs">
+      <DependentUpon>BulidUserPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClearForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClearForm.Designer.cs">
+      <DependentUpon>ClearForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\CommonMethod.cs" />
+    <Compile Include="DataLinkPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataLinkPage.designer.cs">
+      <DependentUpon>DataLinkPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\ExportConsecutiveResourcePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\ExportConsecutiveResourcePage.Designer.cs">
+      <DependentUpon>ExportConsecutiveResourcePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\ExportResourcePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\ExportResourcePage.Designer.cs">
+      <DependentUpon>ExportResourcePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\AddBusinessPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\AddBusinessPage.Designer.cs">
+      <DependentUpon>AddBusinessPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\AddFinancePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\AddFinancePage.Designer.cs">
+      <DependentUpon>AddFinancePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\EditFinancePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\EditFinancePage.Designer.cs">
+      <DependentUpon>EditFinancePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\FinancePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\FinancePage.Designer.cs">
+      <DependentUpon>FinancePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlowManager\DeletePassengerActivation.cs" />
+    <Compile Include="FlowManager\DeletePassengerActivation_PC.cs" />
+    <Compile Include="FlowManager\GetPassengerActivation_PC.cs" />
+    <Compile Include="FlowManager\GetPassengerActivation.cs" />
+    <Compile Include="FlowManager\SendEmailActivation.cs" />
+    <Compile Include="FlowManager\AccountActivation.cs" />
+    <Compile Include="FlowManager\ToolCommon.cs" />
+    <Compile Include="FlowManager\UpdateUserActivation.cs" />
+    <Compile Include="Free\FreePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Free\FreePage.Designer.cs">
+      <DependentUpon>FreePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LockPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LockPage.designer.cs">
+      <DependentUpon>LockPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log\ResourceLogPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log\ResourceLogPage.Designer.cs">
+      <DependentUpon>ResourceLogPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Passenger\ExportPassenger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Passenger\ExportPassenger.Designer.cs">
+      <DependentUpon>ExportPassenger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectBusinessPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectBusinessPage.designer.cs">
+      <DependentUpon>SelectBusinessPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\ResourceDetailPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\ResourceDetailPage.Designer.cs">
+      <DependentUpon>ResourceDetailPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\ResourceStatisticsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\ResourceStatisticsPage.Designer.cs">
+      <DependentUpon>ResourceStatisticsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\TaskStatisticsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics\TaskStatisticsPage.designer.cs">
+      <DependentUpon>TaskStatisticsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolMain.Designer.cs">
+      <DependentUpon>ToolMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Valid\AddDeletePassenger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\AddDeletePassenger.Designer.cs">
+      <DependentUpon>AddDeletePassenger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\DeletePassenger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\DeletePassenger.Designer.cs">
+      <DependentUpon>DeletePassenger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\AnalysisPassengerInPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\AnalysisPassengerInPC.Designer.cs">
+      <DependentUpon>AnalysisPassengerInPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\DeletePassengerInPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\DeletePassengerInPC.Designer.cs">
+      <DependentUpon>DeletePassengerInPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\PassCode\GetPassengerServer.cs" />
+    <Compile Include="Valid\PassCode\YDMWrapper.cs" />
+    <Compile Include="Valid\PW\ConvertNewAccountPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\PW\ConvertNewAccountPage.Designer.cs">
+      <DependentUpon>ConvertNewAccountPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\PW\EncryptionPWPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\PW\EncryptionPWPage.Designer.cs">
+      <DependentUpon>EncryptionPWPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\ReadPassCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\ReadPassCode.Designer.cs">
+      <DependentUpon>ReadPassCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\UserValidPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\UserValidPage.Designer.cs">
+      <DependentUpon>UserValidPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\PW\PWJMPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\PW\PWJMPage.Designer.cs">
+      <DependentUpon>PWJMPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\ReadPassengerPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\ReadPassengerPage.Designer.cs">
+      <DependentUpon>ReadPassengerPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\SendEmailValidPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\SendEmailValidPage.Designer.cs">
+      <DependentUpon>SendEmailValidPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\PassCode\AnalysePassCode.cs" />
+    <Compile Include="Valid\UpdateUserPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\UpdateUserPage.Designer.cs">
+      <DependentUpon>UpdateUserPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\LoginValidPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\LoginValidPage.Designer.cs">
+      <DependentUpon>LoginValidPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\PasscodeUpdatePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\PasscodeUpdatePage.Designer.cs">
+      <DependentUpon>PasscodeUpdatePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Valid\VailMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Valid\VailMainPage.Designer.cs">
+      <DependentUpon>VailMainPage.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BulidUserPage.resx">
+      <DependentUpon>BulidUserPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClearForm.resx">
+      <DependentUpon>ClearForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataLinkPage.resx">
+      <DependentUpon>DataLinkPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\ExportConsecutiveResourcePage.resx">
+      <DependentUpon>ExportConsecutiveResourcePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\ExportResourcePage.resx">
+      <DependentUpon>ExportResourcePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\AddBusinessPage.resx">
+      <DependentUpon>AddBusinessPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\AddFinancePage.resx">
+      <DependentUpon>AddFinancePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\EditFinancePage.resx">
+      <DependentUpon>EditFinancePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\FinancePage.resx">
+      <DependentUpon>FinancePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Free\FreePage.resx">
+      <DependentUpon>FreePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LockPage.resx">
+      <DependentUpon>LockPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log\ResourceLogPage.resx">
+      <DependentUpon>ResourceLogPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Passenger\ExportPassenger.resx">
+      <DependentUpon>ExportPassenger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectBusinessPage.resx">
+      <DependentUpon>SelectBusinessPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\ResourceDetailPage.resx">
+      <DependentUpon>ResourceDetailPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\ResourceStatisticsPage.resx">
+      <DependentUpon>ResourceStatisticsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics\TaskStatisticsPage.resx">
+      <DependentUpon>TaskStatisticsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolMain.resx">
+      <DependentUpon>ToolMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Valid\AddDeletePassenger.resx">
+      <DependentUpon>AddDeletePassenger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\DeletePassenger.resx">
+      <DependentUpon>DeletePassenger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\AnalysisPassengerInPC.resx">
+      <DependentUpon>AnalysisPassengerInPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\DeletePassengerInPC.resx">
+      <DependentUpon>DeletePassengerInPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\PW\ConvertNewAccountPage.resx">
+      <DependentUpon>ConvertNewAccountPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\PW\EncryptionPWPage.resx">
+      <DependentUpon>EncryptionPWPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\ReadPassCode.resx">
+      <DependentUpon>ReadPassCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\UserValidPage.resx">
+      <DependentUpon>UserValidPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\PW\PWJMPage.resx">
+      <DependentUpon>PWJMPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\ReadPassengerPage.resx">
+      <DependentUpon>ReadPassengerPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\SendEmailValidPage.resx">
+      <DependentUpon>SendEmailValidPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\UpdateUserPage.resx">
+      <DependentUpon>UpdateUserPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\LoginValidPage.resx">
+      <DependentUpon>LoginValidPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\PasscodeUpdatePage.resx">
+      <DependentUpon>PasscodeUpdatePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Valid\VailMainPage.resx">
+      <DependentUpon>VailMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\CX.Common.csproj">
+      <Project>{748db1ea-c3da-4f04-ae0e-a6b50c338f1f}</Project>
+      <Name>CX.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CX.Config\CX.Config.csproj">
+      <Project>{ffa01db2-af1a-4da1-be45-bbc0fc255ac5}</Project>
+      <Name>CX.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyDB\CX.DB.csproj">
+      <Project>{0dc7e4af-9cc5-487b-ba9e-030066926b05}</Project>
+      <Name>CX.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyEntiry\CX.Entiry.csproj">
+      <Project>{6a47a29e-be1e-4205-80ef-9f626050027b}</Project>
+      <Name>CX.Entiry</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Queue\CaptchaServerCacheClient\CX.BaseServerClient.csproj">
+      <Project>{fad24475-5758-43c4-aa0f-5d392d5e3866}</Project>
+      <Name>CX.BaseServerClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="20150717042547706_easyicon_net_24.ico" />
+    <None Include="Resources\a.png" />
+    <Content Include="Resources\Add.png" />
+    <Content Include="Resources\all.png" />
+    <Content Include="Resources\amount.png" />
+    <Content Include="Resources\bigLock.png" />
+    <Content Include="Resources\bulid.png" />
+    <Content Include="Resources\business.png" />
+    <Content Include="Resources\buy1.png" />
+    <Content Include="Resources\edit.png" />
+    <None Include="Resources\hand.png" />
+    <None Include="Resources\hand1.png" />
+    <Content Include="Resources\lock.png" />
+    <Content Include="Resources\novalid.png" />
+    <None Include="Resources\start.png" />
+    <None Include="Resources\stop.png" />
+    <Content Include="Resources\user1.png" />
+    <None Include="Resources\data.png" />
+    <None Include="Resources\export%281%29.png" />
+    <None Include="Resources\valid.png" />
+    <None Include="Resources\export.png" />
+    <None Include="Resources\user%281%29.png" />
+    <None Include="Resources\import%281%29.png" />
+    <None Include="Resources\buy%281%29.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\import.png" />
+    <None Include="Resources\buy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flow\Mobile\修改密码.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Flow\Mobile\查询已完成订单.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Flow\Mobile\查询未完成的订单.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Flow\Mobile\用户登录初始化.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flow\Mobile\获取用户信息.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flow\Mobile\获取验证码.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flow\Mobile\修改用户信息.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flow\Mobile\发送邮件.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flow\Mobile\删除联系人.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flow\PC初始化.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Flow\PC登录验证.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Flow\PC获取联系人.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Flow\PC获取联系人JSON.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Flow\PC识别验证码.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Flow\PC验证码.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flow\PC删除联系人.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flow\PC查询未完成订单.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Flow\PC查询订单.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

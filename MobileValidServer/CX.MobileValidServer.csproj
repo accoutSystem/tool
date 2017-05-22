@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{366B40FD-D4D3-440D-A296-F63381EC8C7B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobileValidServer</RootNamespace>
+    <AssemblyName>MobileValidServer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SMS_16px_1187407_easyicon.net.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fangbian.Common">
+      <HintPath>..\lib\Ticket\Fangbian.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.Data.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Ticket\Fangbian.Data.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.DataStruct">
+      <HintPath>..\lib\Ticket\Fangbian.DataStruct.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.Http">
+      <HintPath>..\lib\Ticket\Fangbian.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Ticket\Fangbian.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.Tickets">
+      <HintPath>..\lib\Ticket\Fangbian.Tickets.dll</HintPath>
+    </Reference>
+    <Reference Include="Fangbian.Tickets.Trains.Activities">
+      <HintPath>..\lib\Ticket\Fangbian.Tickets.Trains.Activities.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Ticket\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GetPhoneValidServer.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PassCodeProvider\FQPassCodeProvider.cs" />
+    <Compile Include="PassCodeProvider\FMPassCodeProvider.cs" />
+    <Compile Include="PassCodeProvider\KMPassCodeProvider.cs" />
+    <Compile Include="PassCodeProvider\SHPassCodeProvider.cs" />
+    <Compile Include="PassCodeProvider\ZMPassCodeProvider.cs" />
+    <Compile Include="PassCodeProvider\AMPassCodeProvider.cs" />
+    <Compile Include="PassCodeProvider\Base\BasePassCodeProvider.cs" />
+    <Compile Include="PassCodeProvider\Base\IPassCodeProvider.cs" />
+    <Compile Include="PassCodeProvider\Common\PassCodeProviderFactory.cs" />
+    <Compile Include="PassCodeProvider\Common\ValidPlatformRequest.cs" />
+    <Compile Include="PassCodeProvider\YMPassCodeProvider.cs" />
+    <Compile Include="PassCodeProvider\YPYPassCodeProvider.cs" />
+    <Compile Include="PassCodeProvider\YunMaPassCodeProvider.cs" />
+    <Compile Include="ServerWatch.cs" />
+    <Compile Include="UserItem.cs" />
+    <Compile Include="ValidPhoneManager.cs" />
+    <Compile Include="MobileValidPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MobileValidPage.Designer.cs">
+      <DependentUpon>MobileValidPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MobileValidPage.resx">
+      <DependentUpon>MobileValidPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\CX.Common.csproj">
+      <Project>{748db1ea-c3da-4f04-ae0e-a6b50c338f1f}</Project>
+      <Name>CX.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CX.Config\CX.Config.csproj">
+      <Project>{ffa01db2-af1a-4da1-be45-bbc0fc255ac5}</Project>
+      <Name>CX.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyDB\CX.DB.csproj">
+      <Project>{0dc7e4af-9cc5-487b-ba9e-030066926b05}</Project>
+      <Name>CX.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyEntiry\CX.Entiry.csproj">
+      <Project>{6a47a29e-be1e-4205-80ef-9f626050027b}</Project>
+      <Name>CX.Entiry</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Queue\CaptchaServerCacheClient\CX.BaseServerClient.csproj">
+      <Project>{fad24475-5758-43c4-aa0f-5d392d5e3866}</Project>
+      <Name>CX.BaseServerClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flow\用户登录初始化.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="phone_16px_1190290_easyicon.net.ico" />
+    <None Include="Resources\data.png" />
+    <None Include="Resources\start.png" />
+    <None Include="Resources\stop.png" />
+    <Content Include="SMS_16px_1187407_easyicon.net.ico" />
+    <Content Include="TextFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flow\获取验证码.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flow\提交验证码.XAML">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
